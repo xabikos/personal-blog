@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Charalampos Karypidis technical blog
 subtitle:
 description:
 author: charalampos karypidis
@@ -64,6 +64,9 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: tranquilpeak
+
+alias:
+  security/identity%20system/2014/11/05/user-confirmed-filter-attribute.html: 2014/11/05/user-confirmed-filter-attribute/
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
