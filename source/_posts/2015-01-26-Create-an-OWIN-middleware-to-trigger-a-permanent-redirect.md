@@ -1,8 +1,9 @@
 ---
 title: ASP.NET - Create an OWIN middleware to trigger a permanent redirect
-date: 2016-04-24 23:15:00
+date: 2015-01-26 23:15:00
 tags: [asp.net, owin, redirect]
 categories: [web application, interception, middleware]
+alias: web application/interception/middleware/2015/01/26/asp.net---create-an-owin-middleware-to-trigger-a-permanent-redirect.html
 ---
 
 #### OWIN and project Katana
