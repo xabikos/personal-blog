@@ -67,6 +67,7 @@ theme: tranquilpeak
 
 alias:
   security/identity system/2014/11/05/user-confirmed-filter-attribute.html: 2014/11/05/user-confirmed-filter-attribute/
+  web application/interception/middleware/2015/01/26/asp.net---create-an-owin-middleware-to-trigger-a-permanent-redirect.html: 2016/04/24/Create-an-OWIN-middleware-to-trigger-a-permanent-redirect/
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
