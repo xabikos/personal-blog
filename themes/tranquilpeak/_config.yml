@@ -58,18 +58,18 @@ sidebar:
             url: /#about
             icon: question
     author_links:
-        # github:
-        #     title: global.github
-        #     url: https://github.com/
-        #     icon: github
+         github:
+             title: global.github
+             url: https://github.com/xabikos
+             icon: github
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
         #     icon: stack-overflow
-        # twitter:
-        #     title: global.twitter
-        #     url: https://twitter.com/
-        #     icon: twitter
+         twitter:
+             title: global.twitter
+             url: https://twitter.com/xabikos
+             icon: twitter
         # facebook:
         #     title: global.facebook
         #     url: https://facebook.com/
@@ -78,14 +78,14 @@ sidebar:
         #     title: global.google_plus
         #     url: https://plus.google.com/
         #     icon: google-plus
-        # linked_in:
-        #     title: global.linkedin
-        #     url: https://www.linkedin.com/profile/
-        #     icon: linkedin
-        # mail:
-        #     title: global.mail
-        #     url: mailto:
-        #     icon: envelope-o
+         linked_in:
+             title: global.linkedin
+             url: https://www.linkedin.com/in/charalamposkarypidis/
+             icon: linkedin
+         mail:
+             title: global.mail
+             url: mailto:xaralaboskaripidis@gmail.com
+             icon: envelope-o
     rss:
         rss:
             title: global.rss
@@ -112,7 +112,7 @@ header:
 # Author
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
-    email:
+    email: xaralaboskaripidis@gmail.com
     location:
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
@@ -120,7 +120,7 @@ author:
     # Overwritten by your gravatar image if `gravatar_email` is filled
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
-    twitter:
+    twitter: xabikos
     # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
     google_plus:
 
@@ -132,7 +132,7 @@ author:
 # 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
 # 3: Display header bar on all screens and large sidebar is swiped
 # 4: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 2
+sidebar_behavior: 1
 # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -166,7 +166,7 @@ tag_pagination: true
 # You can't use Disqus and Duoshuo together
 # then fill the right shortname
 # Your Disqus shortname
-disqus_shortname:
+disqus_shortname: xabikos
 # Your Duoshuo shortname
 duoshuo_shortname:
 # Your Google analystics web property ID : UA-XXXXX-X
@@ -174,7 +174,7 @@ google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatar_email:
+gravatar_email: xaralaboskaripidis@gmail.com
 # Your swiftype install key
 swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
