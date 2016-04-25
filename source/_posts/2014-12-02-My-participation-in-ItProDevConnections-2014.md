@@ -3,6 +3,7 @@ title: My participation in ItProDevConnections 2014
 date: 2014-12-02 22:15:00
 tags: [public speaker]
 categories: [conferences, public events]
+alias: conferences/public events/2014/12/02/my-participation-in-itprodevconnections-2014.html
 ---
 
 

@@ -3,7 +3,7 @@ title: Create a multitenant application with Entity Framework Code First - Part 
 date: 2014-11-17 23:15:00
 tags: [entity framework, multi-tenant, interceptors, code first]
 categories: [multitenant, application design, software as a service]
-alias: multitenant/application%20design/software%20as%20a%20service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html
+alias: multitenant/application design/software as a service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html
 ---
 
 
