@@ -43,10 +43,10 @@ sidebar:
             title: global.tags
             url: /all-tags
             icon: tags
-        archives:
-            title: global.archives
-            url: /all-archives
-            icon: archive
+        #archives:
+        #    title: global.archives
+        #    url: /all-archives
+        #    icon: archive
         search:
             title: global.search
             url: /#search
@@ -113,7 +113,7 @@ header:
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
     email: xaralaboskaripidis@gmail.com
-    location:
+    location: Brussels, Belgium
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
     # or you can use an external url
