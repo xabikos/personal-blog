@@ -4,11 +4,15 @@ date: 2014-11-19 20:15:00
 tags: [entity framework, multi-tenant, interceptors, code first]
 categories: [multitenant, application design, software as a service]
 alias: multitenant/application design/software as a service/2014/11/19/create-a-multitenant-application-with-entity-framework-code-first---part-3.html
+keywords:
+- entity framework
+- multitenant
+- code first
 ---
 
 #### Connection with previous posts
 
-This is the last post of the series of how we can use Entity Framework Code First to create a multitenant application. You are requested first to read <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html"> Part 1</a> where there is an introduction in the problem we are trying to solve and some infrastructure code required to continue. <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/18/create-a-multitenant-application-with-entity-framework-code-first---part-2.html"> Part 2</a> describes the query filtering that is happening automatically in the entire application. In this post I am going to show how we can use the CommandTree interceptor in order to modify the insert, update and delete commands. The idea of implement something like this came to my mind after watching [Rowan Miller's][miller] excellent [session][session] in North America TechEd, which I highly recommend you to watch.
+This is the last post of the series of how we can use Entity Framework Code First to create a multitenant application. You are requested first to read [Part 1][part1] where there is an introduction in the problem we are trying to solve and some infrastructure code required to continue. [Part 2][part2] describes the query filtering that is happening automatically in the entire application. In this post I am going to show how we can use the CommandTree interceptor in order to modify the insert, update and delete commands. The idea of implement something like this came to my mind after watching [Rowan Miller's][miller] excellent [session][session] in North America TechEd, which I highly recommend you to watch.
 <!-- more -->
 ***
 
@@ -201,13 +205,14 @@ We create manually again a predicate and do a logical AND with the original pred
 
 #### Final thoughts
 
-This was the last part of a series of posts. You can find the first part <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html">here</a> and the second <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/18/create-a-multitenant-application-with-entity-framework-code-first---part-2.html">here</a>. I hope that these posts will become useful to other developers as this is the way we solved the multi tenancy data access problem in the project I am currently working on. Any comments or thoughts to improve the code are more than welcome. As I mentioned in the previous posts I have a public [Github repository][github] that contains a full project with the demonstrated code.
+This was the last part of a series of posts. You can find the first part [here][part1] and the second [here][part2]. I hope that these posts will become useful to other developers as this is the way we solved the multi tenancy data access problem in the project I am currently working on. Any comments or thoughts to improve the code are more than welcome. As I mentioned in the previous posts I have a public [Github repository][github] that contains a full project with the demonstrated code.
 
-###<a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html">Part 1</a>
+### [Part 1][part1]
 
-###<a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/18/create-a-multitenant-application-with-entity-framework-code-first---part-2.html">Part 2</a>
+### [Part 2][part2]
 
-
+[part1]: /2014/11/17/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-1/
+[part2]: /2014/11/18/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-2/
 [miller]: http://romiller.com/
 [session]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B417#fbid=
 [interceptor]: https://github.com/xabikos/EfMultitenant/blob/master/Multitenant.Interception/Infrastructure/TenantCommandTreeInterceptor.cs

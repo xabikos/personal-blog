@@ -4,6 +4,10 @@ date: 2014-11-18 20:15:00
 tags: [entity framework, multi-tenant, interceptors, code first]
 categories: [multitenant, application design, software as a service]
 alias: multitenant/application design/software as a service/2014/11/18/create-a-multitenant-application-with-entity-framework-code-first---part-2.html
+keywords:
+- entity framework
+- multitenant
+- code first
 ---
 
 #### A short introduction
@@ -103,7 +107,7 @@ The code here requires some knowledge of entity framework internals but I will t
 #### The command interceptor class
 
 The command interceptor class is shown below:
-{% tabbed_codeblock Message POCO%}
+{% tabbed_codeblock Command Interceptor%}
     <!-- tab cs -->
 internal class TenantCommandInterceptor : IDbCommandInterceptor {
     public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext){
@@ -151,7 +155,7 @@ Here the logic is simpler as we just have to find the SQL Parameter if present a
 #### Add interceptors in Entity Framework pipeline
 
 The last step is to make Entity Framework aware of the interceptors we added before. To accomplish this we must use one of the latest addition in Framework the [DbConfiguration][dbconfiguration] class. We have to derive from this class and add the two interceptors as the code snippet below shows:
-{% tabbed_codeblock Message POCO%}
+{% tabbed_codeblock Entity Framework Configuration%}
     <!-- tab cs -->
 public class EntityFrameworkConfiguration : DbConfiguration {
     public EntityFrameworkConfiguration() {
@@ -174,7 +178,7 @@ This was the second part of a series of three posts. You can find the first part
 ### [Part 3][part3]
 
 [part1]: /2014/11/17/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-1/
-[part3]: /2014/11/17/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-1/
+[part3]: /2014/11/19/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-3/
 [effilters]: https://github.com/jbogard/EntityFramework.Filters/
 [effiltersauthor]: http://lostechies.com/jimmybogard/
 [effilterspackage]: https://www.nuget.org/packages/EntityFramework.Filters/

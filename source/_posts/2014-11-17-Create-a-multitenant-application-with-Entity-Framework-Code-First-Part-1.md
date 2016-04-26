@@ -4,6 +4,10 @@ date: 2014-11-17 23:15:00
 tags: [entity framework, multi-tenant, interceptors, code first]
 categories: [multitenant, application design, software as a service]
 alias: multitenant/application design/software as a service/2014/11/17/create-a-multitenant-application-with-entity-framework-code-first---part-1.html
+keywords:
+- entity framework
+- multitenant
+- code first
 ---
 
 
@@ -193,7 +197,7 @@ This was the first part of a series of three posts. It includes the problem and 
 ### [Part 3][part3]
 
 [part2]: /2014/11/18/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-2/
-[part3]: /2014/11/17/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-1/
+[part3]: /2014/11/19/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-3/
 [mt]: http://en.wikipedia.org/wiki/Multitenancy
 [poco]: http://en.wikipedia.org/wiki/Plain_Old_CLR_Object
 [interceptors]: http://msdn.microsoft.com/en-us/data/dn469464.aspx#BuildingBlocks

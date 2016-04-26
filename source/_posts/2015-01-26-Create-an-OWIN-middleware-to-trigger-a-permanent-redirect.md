@@ -9,7 +9,7 @@ alias: web application/interception/middleware/2015/01/26/asp.net---create-an-ow
 #### OWIN and project Katana
 
 [OWIN][owin] (Open Web Iterface for .NET) is the new way of developing web applications in the .NET ecosystem. It is a great approach as it offers the flexibility of decoupling the application from the hosting environment itself. This means that as long as we develop a Web application on top of OWIN then we can easily host it outside the standard hosting environment so far which is IIS. A quick example is that by using a specific [nuget package] [selfhost]. As OWIN is just a specification then we need an implementation of this in each platform we want to support. The implementation for Microsoft's platform is called [Katana][katana].
-
+<!-- more --> 
 #### OWIN core components
 
 OWIN has a very nice and easy to understand architecture as it is closer to HTTP protocol and doesn't assume any functionality is there because of the hosting layer. All the manipulation has to do with the two main objects that is an HttpRequestMessage and HttpResponseMessage. This is a really good choice of abstracting the actual HTTP layer and it's an architecture that is very familiar to developers from other platforms like [node.js][node]. On top of this another very interesting and well known pattern that exists also in [Express][express] framework is the middlewares. A middleware is a really simple piece of code that gets a request object as a parameter and can either transform this request and pass it to the next middleware if present or create a response and don't allow the request to further execute on the server. So a web application could potentially consist of several middlewares that are executed one after the other.
