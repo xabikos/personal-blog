@@ -7,8 +7,8 @@ alias: multitenant/application design/software as a service/2014/11/17/create-a-
 ---
 
 
-A highly increasing request we have to serve as developers, especially after Software as a Service revolution, is to provide software that is able to handle individual users in one application by separate each user's data. This feature is called [Multitenancy][mt] and there are several ways to achieve it. In this series of posts I will try to demonstrate how we can achieve the data isolation by using some advance features of Entity Framework. 
-<!-- more --> 
+A highly increasing request we have to serve as developers, especially after Software as a Service revolution, is to provide software that is able to handle individual users in one application by separate each user's data. This feature is called [Multitenancy][mt] and there are several ways to achieve it. In this series of posts I will try to demonstrate how we can achieve the data isolation by using some advance features of Entity Framework.
+<!-- more -->
 ***
 
 #### The really simple model
@@ -31,7 +31,7 @@ We follow mainly the convention over configuration approach Entity Framework pro
     <!-- tab cs -->
 protected override void OnModelCreating(DbModelBuilder modelBuilder) {
     base.OnModelCreating(modelBuilder);
-    
+
     modelBuilder.Entity<Message>()
         .HasRequired(m => m.User)
         .WithMany()
@@ -43,7 +43,7 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder) {
 
 ***
 
-#### The "manual" approach 
+#### The "manual" approach
 
 I will first implement an MVC Controller that includes the logic of filtering based on TenantId and assign the correct TenantId when creating a new message. The code we have to write is more or less like the snippet below:
 {% tabbed_codeblock Controller%}
@@ -123,7 +123,7 @@ The first step is to create an ordinary attribute class with which we can annota
 public class TenantAwareAttribute : Attribute {
     public const string TenantAnnotation = "TenantAnnotation";
     public const string TenantIdFilterParameterName = "TenantIdParameter";
-    
+
     public string ColumnName { get; private set; }
 
     public TenantAwareAttribute(string columnName) {
@@ -131,7 +131,7 @@ public class TenantAwareAttribute : Attribute {
     }
 
     public static string GetTenantColumnName(EdmType type) {
-        MetadataProperty annotation = type.MetadataProperties.SingleOrDefault( 
+        MetadataProperty annotation = type.MetadataProperties.SingleOrDefault(
             p => p.Name.EndsWith(string.Format("customannotation:{0}", TenantAnnotation)));
 
         return annotation == null ? null : (string)annotation.Value;
@@ -140,7 +140,7 @@ public class TenantAwareAttribute : Attribute {
     <!-- endtab -->
 {% endtabbed_codeblock %}
 
-When using this attribute we have to declare which property of the class is the one responsible for TenantId. Moreover exposes a static helper method to get the the tenant column name based on the EdmType. 
+When using this attribute we have to declare which property of the class is the one responsible for TenantId. Moreover exposes a static helper method to get the the tenant column name based on the EdmType.
 
 The next step is to use this attribute by adding a custom [Entity Framework convention][conventions] to the DbContext class we are going to use for data access in our application. To do this we have to add the code snippet below on the DbContext class.
 
@@ -148,13 +148,13 @@ The next step is to use this attribute by adding a custom [Entity Framework conv
     <!-- tab cs -->
 protected override void OnModelCreating(DbModelBuilder modelBuilder) {
     base.OnModelCreating(modelBuilder);
-    
+
     modelBuilder.Entity<Message>()
         .HasRequired(m => m.User)
         .WithMany()
         .HasForeignKey(m => m.TenantId)
         .WillCascadeOnDelete(true);
-    
+
     var conv = new AttributeToTableAnnotationConvention<TenantAwareAttribute, string>(
                     TenantAwareAttribute.TenantAnnotation, (type, attributes) => attributes.Single().ColumnName);
 
@@ -188,12 +188,12 @@ As we can see here there is another important change in the class. The TenantId 
 
 This was the first part of a series of three posts. It includes the problem and the infrastructure code for what is coming on the next posts. For those that can't wait I have created a [project in Github][github] that contains the full code in a relatively change model. In the next post I will describe how we can use the code we already created to apply filtering based on TenantId always in a transparent way for our application.
 
-### <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/18/create-a-multitenant-application-with-entity-framework-code-first---part-2.html">Part 2</a>
+### [Part 2][part2]
 
-### <a href="http://xabikos.com/multitenant/application%20design/software%20as%20a%20service/2014/11/19/create-a-multitenant-application-with-entity-framework-code-first---part-3.html">Part 3</a>
+### [Part 3][part3]
 
-
-
+[part2]: /2014/11/18/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-2/
+[part3]: /2014/11/17/Create-a-multitenant-application-with-Entity-Framework-Code-First-Part-1/
 [mt]: http://en.wikipedia.org/wiki/Multitenancy
 [poco]: http://en.wikipedia.org/wiki/Plain_Old_CLR_Object
 [interceptors]: http://msdn.microsoft.com/en-us/data/dn469464.aspx#BuildingBlocks
