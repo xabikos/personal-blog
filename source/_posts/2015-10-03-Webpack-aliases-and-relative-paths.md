@@ -1,6 +1,6 @@
 ---
 title: Webpack aliases and relative paths
-date: 2016-04-27 09:02:51
+date: 2015-10-03 12:10:00
 tags: [webpack]
 categories: [javascript module bundler, javascript dependencies management]
 alias: javascript module bundler/javascript dependencies management/2015/10/03/webpack-aliases-and-relative-paths.html
