@@ -19,7 +19,7 @@ This is the last post of the series of how we can use Entity Framework Code Firs
 #### Modification of insert command
 
 Let's start by presenting the code of insert command which is probably the simplest case. What we want to achieve is to always assign the correct TenantId when saving an entity that has this property. I have to remind here that Message class has a private set in TenantId property so there is no way to assign it from the code base.
-{% tabbed_codeblock Message POCO%}
+{% tabbed_codeblock Insert command interceptor %}
     <!-- tab cs -->
 public class TenantCommandTreeInterceptor : IDbCommandTreeInterceptor {
     public void TreeCreated(DbCommandTreeInterceptionContext interceptionContext) {
@@ -84,7 +84,7 @@ The most important piece of code is where we create the set clause. To further e
 #### Modification of update command
 
 Now we have to modify any update command that is sent to the database and remove any change in the value of tenantId and add an extra where statement based on the tenantId. So after the interception any SQL update command is going to have an extra and statement like AND TenantId = 'value of tenantId'.
-{% tabbed_codeblock Message POCO%}
+{% tabbed_codeblock Update command interceptor %}
     <!-- tab cs -->
 public class TenantCommandTreeInterceptor : IDbCommandTreeInterceptor {
     public void TreeCreated(DbCommandTreeInterceptionContext interceptionContext) {
@@ -151,7 +151,7 @@ The first part of the code is exactly the same as the interception in insert com
 
 The last piece to finish the puzzle is to modify the delete command before travelling to the database. The goal is exactly the same with update command. We want to append an extra where SQL statement in all delete commands. The code is also the same as in update command.
 
-{% tabbed_codeblock Message POCO%}
+{% tabbed_codeblock Delete command interceptor %}
     <!-- tab cs -->
 public class TenantCommandTreeInterceptor : IDbCommandTreeInterceptor {
     public void TreeCreated(DbCommandTreeInterceptionContext interceptionContext) {

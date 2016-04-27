@@ -32,8 +32,8 @@ Available tasks are declared in an external file called "tasks.json" and is plac
 
 In order to be able to execute the npm scripts we need to tweak the first task that is related to Typescript. As a first step lets see what are the available scripts inside the package.json file.
 
-{% tabbed_codeblock Add react content to Razor view %}
-    <!-- tab js -->
+{% tabbed_codeblock npm scripts %}
+    <!-- tab json -->
 "scripts": {
   "build-dev": "webpack --bail",
   "start-dev": "webpack-dev-server"
@@ -43,8 +43,8 @@ In order to be able to execute the npm scripts we need to tweak the first task t
 
 As I mentioned before we are doing a lot of react development so these two scripts are responsible for building the development version of the code the first and for starting the webpack's development server and watching the files for changes the second. Now lets see how the tasks.json file looks like
 
-{% tabbed_codeblock Add react content to Razor view %}
-    <!-- tab js -->
+{% tabbed_codeblock Add npm as comand %}
+    <!-- tab json -->
 {
   "version": "0.1.0",
   "command": "npm",
@@ -72,8 +72,8 @@ Now that everything is in place when hitting Ctrl + Shift + P or Cmd + Shift + P
 
 Be default VS Code has assigned keyboard shortcuts for execute the build and test task. Luckily there are available the extension points for showing the panel with available tasks and also a command to stop the running task. First you need to find the preferences and then select Keyboard Shortcuts and then add the following entries. Feel free to change the key combinations according to your preferences. It was hard though to find some combination so I chose r for run a task and e for exit a task. After saving we can have an easier access to both select the command and also to terminate it.
 
-{% tabbed_codeblock Add react content to Razor view %}
-    <!-- tab js -->
+{% tabbed_codeblock Keyboard shortcuts %}
+    <!-- tab json -->
 { "key": "shift+cmd+r",  "command": "workbench.action.tasks.runTask" },
 { "key": "shift+cmd+e",  "command": "workbench.action.tasks.terminate"}
     <!-- endtab -->

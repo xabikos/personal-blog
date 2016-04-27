@@ -4,6 +4,10 @@ date: 2014-11-05 20:00:00
 tags: [asp.net mvc, asp.net web api, action filters]
 categories:	[security, identity system]
 alias: security/identity system/2014/11/05/user-confirmed-filter-attribute.html
+keywords:
+- asp.net
+- identity
+- security
 ---
 
 [Action filters][af] is a very powerful mechanism in an ASP.NET MVC application that gives us the capability of injecting functionality in our application in a centralized and structure way. 

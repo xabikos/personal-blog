@@ -4,6 +4,10 @@ date: 2015-01-26 23:15:00
 tags: [asp.net, owin, redirect]
 categories: [web application, interception, middleware]
 alias: web application/interception/middleware/2015/01/26/asp.net---create-an-owin-middleware-to-trigger-a-permanent-redirect.html
+keywords:
+- owin
+- redirect
+- asp.net
 ---
 
 #### OWIN and project Katana
@@ -18,7 +22,7 @@ OWIN has a very nice and easy to understand architecture as it is closer to HTTP
 
 The bare minimum OWIN middleware could look like the code below which the only thing it does is to write some statements as diagnostic and lets the request to proceed by calling the next middleware in the pipeline. 
 
-{% tabbed_codeblock UserConfirmedFilterAttribute %}
+{% tabbed_codeblock Simple middleware example %}
     <!-- tab cs -->
 public class MinimumMiddleware
 {
@@ -41,7 +45,7 @@ public class MinimumMiddleware
 
 In order to use this middleware we have to register it in the StartUp class as below.
 
-{% tabbed_codeblock UserConfirmedFilterAttribute %}
+{% tabbed_codeblock Register middleware for usage %}
     <!-- tab cs -->
 public partial class Startup {
     public void Configuration(IAppBuilder app) {
@@ -56,7 +60,7 @@ public partial class Startup {
 
 The implementation above gives us just a dictionary of string and object and into this dictionary exists all the useful info like the request itself. A better option is to derive from OwinMiddleware class that gives us access to all the request specific data in a strongly type manner through IOwinContext interface. In the code that follows we can see an example of triggering a permanent redirect from an OWIN middleware and don't let the request to further processed by the application.
 
-{% tabbed_codeblock UserConfirmedFilterAttribute %}
+{% tabbed_codeblock Check url middleware %}
     <!-- tab cs -->
 public class CheckUrlMiddleware : OwinMiddleware
 {
@@ -89,7 +93,7 @@ public class CheckUrlMiddleware : OwinMiddleware
 
 The IUrlChecker is just an Interface that the implementation of it contains all the business logic if a redirect should take place or not. I use it here also to demonstrate how we can inject dependencies in our middleware in the correct way. The piece of code below shows what we have to do in order this middleware to executed for every request.
 
-{% tabbed_codeblock UserConfirmedFilterAttribute %}
+{% tabbed_codeblock Register middleware for usage %}
     <!-- tab cs -->
 public partial class Startup {
     public void Configuration(IAppBuilder app) {

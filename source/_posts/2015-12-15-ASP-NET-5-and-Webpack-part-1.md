@@ -57,8 +57,8 @@ After finishing that, you are ready to start the application by executing dnx we
 If no configuration is present will start on localhost:4000. The webpack-dev-server logs to the same console as asp.net does and you can get a nice indication on what is happening.
 After the initial launch and when everything is fine you should have in the console an output like the following:
 
-{% tabbed_codeblock Start asp.net core application %}
-    <!-- tab cs -->
+{% tabbed_codeblock Webpack console output %}
+    <!-- tab cmd -->
 [279] ./~/react-deep-force-update/lib/index.js 1.29 kB {0} [built]
 [280] ./~/global/window.js 243 bytes {0} [built]
 [281] ./app/components/counter.jsx 3.63 kB {0} [built]

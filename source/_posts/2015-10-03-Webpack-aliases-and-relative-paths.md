@@ -18,8 +18,8 @@ keywords:
 As mentioned earlier I am involved lately in multiple projects related to Reactjs so the example uses this library. What is described on the other hand could easily applied in frameworks like Angular or just pure JavaScript code which is bundled through Webpack.
 
 Let's say that we have a really simple components hierarchy that one uses the other. A view of this example could be this one:
-{% tabbed_codeblock Add react content to Razor view %}
-    <!-- tab html -->
+{% tabbed_codeblock Folder structure %}
+    <!-- tab -->
 <App>
   <Utility>
     <Home>
@@ -29,11 +29,11 @@ Let's say that we have a really simple components hierarchy that one uses the ot
 {% endtabbed_codeblock %}
 That means we have a Utility component (you could consider it a separate file) that is used by both App and Home component and on top of this Home component uses also an external service. This is reflected in the file system as:
 
-{% image fancybox nocaption fig-100 clear group:webpack FolderStructure.png "folder structure" %}
+{% image fancybox nocaption fig-33 center clear group:webpack FolderStructure.png "folder structure" %}
 
 Even in new ES6 module system when we need a reference in a piece of code in our project that is not a node module, we need to reference it by relative path to the file we need it. So to make it more concrete the import code for App component looks like this:
 
-{% tabbed_codeblock Add react content to Razor view %}
+{% tabbed_codeblock Import Utility module %}
     <!-- tab js -->
 import Home from './home.jsx';
 import Utility from './common/utility.jsx';
@@ -42,7 +42,7 @@ import Utility from './common/utility.jsx';
 
 And to make the issue with relative paths more obvious lets see the import statements of Home component:
 
-{% tabbed_codeblock Add react content to Razor view %}
+{% tabbed_codeblock Import modules relative paths %}
     <!-- tab js -->
 import Utility from './common/utility.jsx';
 import TextService from '../services/textService.js';
@@ -57,7 +57,7 @@ As mention before [Webpack][webpack] has a section in it's configuration ([resol
 
 First let's see what we need to add to the webpack.config file:
 
-{% tabbed_codeblock Add react content to Razor view %}
+{% tabbed_codeblock Webpack alias config %}
     <!-- tab js -->
 resolve: {
   root: path.resolve(__dirname),
@@ -76,7 +76,7 @@ It's important to configure the root with an absolute path so the path in the al
 
 But now is interesting to see how the import statements of components look like. Let's begin with App component as before:
 
-{% tabbed_codeblock Add react content to Razor view %}
+{% tabbed_codeblock Import module through alias %}
     <!-- tab js -->
 import Home from 'home';
 import Utility from 'utility';
@@ -85,7 +85,7 @@ import Utility from 'utility';
 
 And let's also see the Home component
 
-{% tabbed_codeblock Add react content to Razor view %}
+{% tabbed_codeblock Import module through alias %}
     <!-- tab js -->
 import Utility from 'utility';
 import TextService from 'textService';

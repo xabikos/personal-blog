@@ -42,7 +42,7 @@ During the last months in my work I am heavily involved on developing a large [R
 
  to install Bower globally and then
 
- {% tabbed_codeblock Install bower modules view %}
+ {% tabbed_codeblock Install bower modules %}
     <!-- tab cmd -->
  	bower install
      <!-- endtab -->

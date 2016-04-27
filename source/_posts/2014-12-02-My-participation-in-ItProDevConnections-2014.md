@@ -4,8 +4,11 @@ date: 2014-12-02 22:15:00
 tags: [public speaker]
 categories: [conferences, public events]
 alias: conferences/public events/2014/12/02/my-participation-in-itprodevconnections-2014.html
+keywords:
+- conferences
+- speaker
+- itprodevconnections
 ---
-
 
 During last weekend I had the opportunity to attend [ItProDevConnection][itprodev] for third time and second time in a row as public speaker. I have to say it was an amazing experience, I so enjoyed myself being part of a huge tech community. I met so many interesting people among else and heard about latest trends in development.
 <!-- more --> 

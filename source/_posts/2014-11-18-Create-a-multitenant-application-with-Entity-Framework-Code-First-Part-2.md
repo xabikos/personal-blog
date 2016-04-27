@@ -27,7 +27,7 @@ The idea behind this implementation came up based on two very nice projects in G
 #### The command tree interceptor
 
 The first step is to implement the IDbCommandTreeInterceptor and the TreeCreated method it declares, in order to take control of the query send to the database. The TenantCommandTreeInterceptor class is available below:
-{% tabbed_codeblock Command Interceptor%}
+{% tabbed_codeblock Query command Interceptor%}
     <!-- tab cs -->
 public class TenantCommandTreeInterceptor : IDbCommandTreeInterceptor {
     public void TreeCreated(DbCommandTreeInterceptionContext interceptionContext) {
