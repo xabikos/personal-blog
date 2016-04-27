@@ -48,6 +48,11 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in

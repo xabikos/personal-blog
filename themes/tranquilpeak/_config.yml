@@ -47,12 +47,12 @@ sidebar:
         #    title: global.archives
         #    url: /all-archives
         #    icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
+        #search:
+        #    title: global.search
+        #    url: /#search
+        #    icon: search
             # `st-search-show-outputs` classes are used to open swiftype search window
-            class: st-search-show-outputs
+        #    class: st-search-show-outputs
         about:
             title: global.about
             url: /#about
