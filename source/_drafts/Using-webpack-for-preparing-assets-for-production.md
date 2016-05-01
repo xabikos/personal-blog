@@ -1,11 +1,11 @@
 ---
 title: Using webpack for preparing assets for production
-date: 2016-04-29 20:55:06
 tags: [webpack, production asset management]
 categories: [javascript module bundler, javascript dependencies management, css module bundler, css dependencies management]
 keywords:
 - webpack
 ---
+
 
 ## Static asset management in modern web development
 
