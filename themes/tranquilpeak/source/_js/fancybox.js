@@ -1,33 +1,41 @@
 (function($) {
   'use strict';
-  
+
   // Run fancybox feature
 
   $(document).ready(function() {
-    $(".fancybox").fancybox({
-      maxWidth: 900,
-      maxHeight: 800,
-      fitToView: true,
-      width: '50%',
-      height: '50%',
-      autoSize: true,
-      closeClick: false,
-      openEffect: 'elastic',
-      closeEffect: 'elastic',
-      prevEffect: 'none',
-      nextEffect: 'none',
-      padding: '0',
-      helpers: {
-        thumbs: {
-          width: 70,
-          height: 70
-        },
-        overlay: {
-          css: {
-            background: 'rgba(0, 0, 0, 0.85)'
-          }
-        }
+    /**
+     * Configure and run Fancybox plugin
+     * @returns {void}
+     */
+    function fancyFox() {
+      var thumbs = false;
+
+      // disable navigation arrows and display thumbs on medium and large screens
+      if ($(window).height() > 480) {
+        thumbs = true;
       }
+
+      $('.fancybox').fancybox({
+        buttons: [
+          'fullScreen',
+          'thumbs',
+          'share',
+          'download',
+          'zoom',
+          'close'
+        ],
+        thumbs: {
+          autoStart: thumbs,
+          axis: 'x'
+        }
+      });
+    }
+
+    fancyFox();
+
+    $(window).smartresize(function() {
+      fancyFox();
     });
   });
 })(jQuery);
