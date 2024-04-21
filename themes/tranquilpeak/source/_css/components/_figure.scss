@@ -3,7 +3,8 @@
         clear: both;
     }
     &.center {
-        @extend .fig-100;
+        width:  calc(100% - 4px);
+        margin: 2px auto;
 
         .fig-img {
             margin: 2px auto;
@@ -16,6 +17,10 @@
     &.right {
         float:  right;
         margin: 2px;
+    }
+    .fig-video {
+        width: 100%;
+        height: auto;
     }
     &.fig-20 {
         @extend .left;
